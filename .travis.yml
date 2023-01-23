@@ -21,3 +21,16 @@ after_success:
   - docker push gmateosaws/fibonacci-nginx
   - docker push gmateosaws/fibonacci-server
   - docker push gmateosaws/fibonacci-worker
+
+deploy:
+  provider: elasticbeanstalk
+  edge: true
+  region: "eu-west-3"
+  app: "fibonacci"
+  env: "Fibonacci-env"
+  bucket-name: "elasticbeanstalk-eu-west-3-478344394470"
+  bucket-path: "fibonacci"
+  on:
+    branch: master
+  access_key_id: $AWS_ACCESS_KEY_ID
+  secret_access_key: "$AWS_SECRET_ACCESS_KEY"
