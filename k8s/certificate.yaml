@@ -1,0 +1,13 @@
+apiVersion: cert-manager.io/v1
+kind: Certificate
+metadata:
+  name: tasacionjoyeriacartagena-com-tls
+spec:
+  secretName: tasacionjoyeriacartagena-com
+  issuerRef:
+    name: letsencrypt-prod
+    kind: ClusterIssuer
+  commonName: tasacionjoyeriacartagena.com
+  dnsNames:
+    - tasacionjoyeriacartagena.com
+    - gus.tasacionjoyeriacartagena.com
