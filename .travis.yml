@@ -14,7 +14,7 @@ before_install:
   - gcloud config set project fibonacci-k8s-376516
   - gcloud config set compute/zone europe-southwest1-b
   - gcloud container clusters get-credentials fibonacci-cluster
-  - echo "$DOCKER_PASSWORD" | DOCKER LOGIN -U "$DOCKER_USERNAME" --password-stdin
+  - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
   - docker build -t gmateosaws/react-test -f ./client/Dockerfile.env ./client
 script:
   - docker run -e CI=true gmateosaws/react-test npm test 
