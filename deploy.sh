@@ -11,7 +11,7 @@ docker push gmateosaws/fibonacci-server:$GIT_SHA
 docker push gmateosaws/fibonacci-worker:$GIT_SHA
 
 kubectl apply -f k8s
-kubectl set image deployments/server-deployments server=gmateosaws/fibonacci-server:$GIT_SHA
-kubectl set image deployments/client-deployments client=gmateosaws/fibonacci-client:$GIT_SHA
-kubectl set image deployments/worker-deployments worker=gmateosaws/fibonacci-worker:$GIT_SHA
+kubectl set image deployments/server-deployment server=gmateosaws/fibonacci-server:$GIT_SHA
+kubectl set image deployments/client-deployment client=gmateosaws/fibonacci-client:$GIT_SHA
+kubectl set image deployments/worker-deployment worker=gmateosaws/fibonacci-worker:$GIT_SHA
 
